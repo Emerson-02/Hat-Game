@@ -6,15 +6,37 @@ public class GameController : MonoBehaviour
 {
 
     public int score;
+
+    public float currentTime;
+    [SerializeField] private float startTime;
+
+    public bool gameStarted;
+
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
+        currentTime = startTime;
+        gameStarted = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        CountdownTime();
+    }
+
+    public void CountdownTime()
+    {
+        if(currentTime > 0f && gameStarted)
+        {
+            currentTime -= Time.deltaTime;
+        }
+        else
+        {
+            gameStarted = false;
+            currentTime = 0f;
+            return;
+        }
     }
 }
