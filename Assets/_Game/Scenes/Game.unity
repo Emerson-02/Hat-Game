@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  highscore: 0
   currentTime: 0
   startTime: 10
   gameStarted: 0
@@ -464,7 +465,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 397971641}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1515751170}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &397971641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1936,6 +1949,7 @@ MonoBehaviour:
   panelGame: {fileID: 2024270561}
   panelPause: {fileID: 1153916982}
   panelGameover: {fileID: 1892294453}
+  txtHighscore: {fileID: 1806014702}
 --- !u!4 &1515751171
 Transform:
   m_ObjectHideFlags: 0
