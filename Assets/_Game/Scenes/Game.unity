@@ -333,7 +333,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1515751170}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: ButtonResume
+        m_MethodName: ButtonRestart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
