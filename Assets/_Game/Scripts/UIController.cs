@@ -9,7 +9,7 @@ public class UIController : MonoBehaviour
 
     private GameController gameController;
 
-    public GameObject panelMainMenu;
+    public GameObject panelMainMenu, panelGame, panelPause, panelGameover;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,37 @@ public class UIController : MonoBehaviour
 
     public void ButtonStartGame()
     {
-        gameController.gameStarted = true; // inicia o jogo
         panelMainMenu.gameObject.SetActive(false); // desativa o painel
+        panelGame.gameObject.SetActive(true);
+        gameController.StartGame();
+    }
+
+    public void ButtonPause()
+    {
+        panelGame.gameObject.SetActive(false);
+        panelPause.gameObject.SetActive(true);
+    }
+
+    public void ButtonResume()
+    {
+        panelPause.gameObject.SetActive(false);
+        panelGame.gameObject.SetActive(true);
+    }
+
+    public void ButtonRestart()
+    {
+        panelGame.gameObject.SetActive(true);
+        panelPause.gameObject.SetActive(false);
+        panelGameover.gameObject.SetActive(false);
+        gameController.StartGame();
+    }
+
+    public void ButtonBackMainMenu()
+    {
+        panelPause.gameObject.SetActive(false);
+        panelMainMenu.gameObject.SetActive(true);
+        panelGameover.gameObject.SetActive(false);
+        gameController.BackMainMenu();
     }
 }
+

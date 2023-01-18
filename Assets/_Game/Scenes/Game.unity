@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 372707250}
   - component: {fileID: 372707249}
   m_Layer: 5
-  m_Name: Button Resume
+  m_Name: Button Restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -330,7 +330,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 372707250}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1515751170}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonResume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &372707250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,7 +586,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 636131281}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1515751170}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonBackMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &636131281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,7 +1548,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1271470641}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1515751170}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonResume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1271470641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1723,8 +1759,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2017398020}
   - {fileID: 1581816605}
+  - {fileID: 2017398020}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1816,7 +1852,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1426050292}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1515751170}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1426050292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1885,6 +1933,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelMainMenu: {fileID: 2017398019}
+  panelGame: {fileID: 2024270561}
+  panelPause: {fileID: 1153916982}
+  panelGameover: {fileID: 1892294453}
 --- !u!4 &1515751171
 Transform:
   m_ObjectHideFlags: 0
@@ -1917,7 +1968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1581816605
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1934,7 +1985,7 @@ RectTransform:
   - {fileID: 1153916983}
   - {fileID: 1892294454}
   m_Father: {fileID: 1350912453}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2532,7 +2583,7 @@ RectTransform:
   - {fileID: 397971639}
   - {fileID: 1806014701}
   m_Father: {fileID: 1350912453}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2594,7 +2645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2024270562
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2738,7 +2789,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2064912682}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1515751170}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: ButtonBackMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2064912682
 MonoBehaviour:
   m_ObjectHideFlags: 0
