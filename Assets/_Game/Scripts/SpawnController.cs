@@ -10,6 +10,8 @@ public class SpawnController : MonoBehaviour
 
     private GameController gameController;
 
+    [SerializeField] private Transform allBallsParent;
+
     private void Awake() {
         Initialize();
     }
@@ -46,6 +48,7 @@ public class SpawnController : MonoBehaviour
             transform.position = new Vector2(Random.Range(-screenWidth.x + lateralMargin, screenWidth.x - lateralMargin), transform.position.y);
 
             GameObject tempBallPrefab = Instantiate(ballPrefab, transform.position, Quaternion.identity) as GameObject;
+            tempBallPrefab.transform.parent = allBallsParent;
         }
         else
         {

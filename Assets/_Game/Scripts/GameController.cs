@@ -5,14 +5,29 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
 
-    public int score, highscore;
+    [HideInInspector] public int score;
+
+    private int highscore;
 
     public float currentTime;
     [SerializeField] private float startTime;
 
-    public bool gameStarted;
+    [HideInInspector] public bool gameStarted;
 
     private UIController uiController;
+
+    [SerializeField] private Transform player; // chapéu
+    private Vector2 playerPosition; // posição do chapéu
+
+    private void Awake()
+    {
+        DeleteHighscore();
+    }
+
+    public void DeleteHighscore()
+    {
+        PlayerPrefs.DeleteKey("highscore");
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +35,8 @@ public class GameController : MonoBehaviour
         gameStarted = false;
         uiController = FindObjectOfType<UIController>();
         highscore = GetScore();
+        uiController.txtTime.text = currentTime.ToString();
+        playerPosition = player.position;
     }
 
     // Update is called once per frame
@@ -49,7 +66,7 @@ public class GameController : MonoBehaviour
 
     public void InvokeCountdownTime()
     {
-        InvokeRepeating("CountdownTime", 1f, 1f); // nome do método, tempo para que comece, tempo de repetição. 1f == 1 segundo
+        InvokeRepeating("CountdownTime", 0f, 1f); // nome do método, tempo para que comece, tempo de repetição. 1f == 1 segundo
     }
 
     public void StartGame()
@@ -58,6 +75,7 @@ public class GameController : MonoBehaviour
         currentTime = startTime;
         gameStarted = true;
         InvokeCountdownTime();
+        player.position = playerPosition;
     }
 
     public void BackMainMenu()
@@ -70,6 +88,7 @@ public class GameController : MonoBehaviour
 
     public void CountdownTime()
     {
+        uiController.txtTime.text = currentTime.ToString();
         if(currentTime > 0f && gameStarted)
         {
             currentTime -= 1f;
